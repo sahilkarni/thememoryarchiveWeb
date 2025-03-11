@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .checkbox-container {
+            margin: 15px 0;
+        }
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        .info-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Request Account Deletion</h1>
+        
+        <p>We're sorry to see you go. Please complete this form to request deletion of your account and associated data.</p>
+        
+        <form id="deletion-form">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="reason">Reason for leaving (optional)</label>
+            <select id="reason" name="reason">
+                <option value="">Please select a reason</option>
+                <option value="privacy">Privacy concerns</option>
+                <option value="not-using">Not using the service anymore</option>
+                <option value="experience">Poor user experience</option>
+                <option value="other">Other reason</option>
+            </select>
+            
+            <label for="feedback">Additional feedback (optional)</label>
+            <textarea id="feedback" name="feedback" rows="4"></textarea>
+            
+            <div class="checkbox-container">
+                <input type="checkbox" id="confirm" name="confirm" required>
+                <label for="confirm" style="display: inline;">I understand this action is permanent and cannot be undone</label>
+            </div>
+            
+            <button type="submit">Request Account Deletion</button>
+        </form>
+        
+        <p class="info-text">After submitting your request, we will process it within 30 days in accordance with our privacy policy. You will receive a confirmation email when the process is complete.</p>
+    </div>
+</body>
+</html>
