@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Screenshots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px; /* Reduced from 1200px to 75% */
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)); /* Reduced from 300px to 225px */
+            grid-auto-rows: minmax(150px, auto); /* Reduced from 200px to 150px */
+            grid-gap: 20px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 16px; /* More rounded edges */
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 16px; /* Match the container's border radius */
+        }
+        
+        .vertical {
+            grid-row: span 2;
+        }
+        
+        .square {
+            aspect-ratio: 1/1;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 12px; /* Rounded edges for modal image */
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #bbb;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+            
+            .header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        
+        <div class="gallery">
+            <div class="gallery-item vertical">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-57-44-97_6f0d06a9d6a5c8a9a24d1a8c8ad21fb9.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item square">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-52-03-71_6f0d06a9d6a5c8a9a24d1a8c8ad21fb9.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item square">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-51-48-37_6f0d06a9d6a5c8a9a24d1a8c8ad21fb9.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item vertical">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-39-39-57_1494e47fd3ab4021c381760215fe8542.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item square">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-39-11-94_1494e47fd3ab4021c381760215fe8542.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item square">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-24-12-01_b5a5c5cb02ca09c784c5d88160e2ec24.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item vertical">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-24-06-87_1494e47fd3ab4021c381760215fe8542.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item square">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-24-00-08_1494e47fd3ab4021c381760215fe8542.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item square">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_2025-06-16-04-23-47-78_1494e47fd3ab4021c381760215fe8542.jpg" alt="Screenshot">
+            </div>
+            <div class="gallery-item square">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_1736457940.png" alt="Screenshot">
+            </div>
+            <div class="gallery-item vertical">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_1725458400.png" alt="Screenshot">
+            </div>
+            <div class="gallery-item square">
+                <img src="https://pub-dcce0d63c6934883bba45c0c776756fe.r2.dev/1/Screenshot_1741700780.png" alt="Screenshot">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for full-size image preview -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Get the modal
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        
+        // Get all gallery items
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        // Add click event to each gallery item
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                modal.style.display = "block";
+                modalImg.src = img.src;
+            });
+        });
+        
+        // Close the modal when clicking the × button
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Close the modal when clicking outside the image
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // Close the modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.style.display === "block") {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
